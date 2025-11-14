@@ -8,5 +8,4 @@ public static Boolean assembleCongaLine(Node head){
             current = current.next;
         }
         return true;
-    
     }
