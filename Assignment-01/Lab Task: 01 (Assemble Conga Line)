@@ -1,0 +1,12 @@
+public static Boolean assembleCongaLine(Node head){
+
+        Node current = head;
+        while (current.next !=null) {
+            if((int)current.elem>(int)current.next.elem){
+               return false; 
+            }
+            current = current.next;
+        }
+        return true;
+    
+    }
