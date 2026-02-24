@@ -1,48 +1,27 @@
 //Assignment Task 04: Rotate Secret
 class AssgnTask4 {
 
-    // Complete this method so that it gives the Expected Output
-    // YOU ONLY HAVE TO SUBMIT THIS METHOD, NO OTHER DRIVER CODE
-    // If needed you can create extra helper static methods
-    // if extra helper methods are used then you must submit those as well
 public static void rotateSecret(Character[][] board) {
-
     int n = board.length;
-    int totalLayers = n / 2;
+    int layer_number=n /2;
+    
+    for (int layer=0;layer<layer_number;layer++) {
+        int rotations =layer_number-layer;
+        for (int r=0;r<rotations;r++) {
+            int first=layer;
+            int last = n-1-layer;
+            for (int i = 0; i<last-first; i++) {
+                char temp=board[first][first + i];
 
-    // layer 0 = outermost
-    // layer totalLayers-1 = innermost
-    for (int layer = 0; layer < totalLayers; layer++) {
-
-        int rotations = totalLayers - layer;
-
-        for (int r = 0; r < rotations; r++) {
-
-            int first = layer;
-            int last = n - 1 - layer;
-
-            for (int i = 0; i < last - first; i++) {
-
-                char temp = board[first][first + i];
-
-                // left -> top
-                board[first][first + i] = board[last - i][first];
-
-                // bottom -> left
-                board[last - i][first] = board[last][last - i];
-
-                // right -> bottom
-                board[last][last - i] = board[first + i][last];
-
-                // top -> right
-                board[first + i][last] = temp;
+                board[first][first+i]=board[last - i][first];
+                board[last - i][first]=board[last][last - i];
+                board[last][last - i]=board[first + i][last];
+                board[first +i][last]=temp;
             }
         }
     }
-
-    // print recovered message
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
+    for(int i =0; i<n;i++) {
+        for(int j=0;j<n;j++) {
             System.out.print(board[i][j]);
         }
     }

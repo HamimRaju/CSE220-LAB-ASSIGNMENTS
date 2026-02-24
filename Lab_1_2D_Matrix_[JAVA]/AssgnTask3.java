@@ -1,68 +1,47 @@
 //Assignment Task 03: Game Arena
 class AssgnTask3 {
 
-    // Complete this method so that it gives the Expected Output
-    // YOU ONLY HAVE TO SUBMIT THIS METHOD, NO OTHER DRIVER CODE
     public static void playGame(Integer[][] arena) {
-
-        // For this task you don't need to create any new 2D array
-        // just print the result inside the function
-
-        // TO DO
-
-        int rows = arena.length;
-        int cols = arena[0].length;
-
-        int points = 0;
-
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-
-                int value = arena[i][j];
-
-                if (value != 0) {
-                    if (value % 50 == 0) {
-
+        int row =arena.length;
+        int column =arena[0].length;
+        int points =0;
+        for(int i =0; i<row;i++) {
+            for(int j=0; j<column;j++) {
+                int value=arena[i][j];
+                if(value != 0) {
+                    if(value % 50 == 0) {
                         int twoCount = 0;
-
-                        // check up
-                        if (i > 0) {
-                            if (arena[i - 1][j] == 2) {
+                        if (i>0) {
+                            if(arena[i - 1][j]==2) {
                                 twoCount++;
                             }
                         }
-
-                        // check down
-                        if (i < rows - 1) {
+                        if(i <row -1) {
                             if (arena[i + 1][j] == 2) {
                                 twoCount++;
                             }
                         }
-
-                        // check left
                         if (j > 0) {
-                            if (arena[i][j - 1] == 2) {
+                            if(arena[i][j - 1] == 2) {
                                 twoCount++;
                             }
                         }
-
-                        // check right
-                        if (j < cols - 1) {
+                        if (j < column - 1) {
                             if (arena[i][j + 1] == 2) {
                                 twoCount++;
                             }
                         }
-
                         points = points + (twoCount * 2);
                     }
                 }
             }
         }
 
-        if (points >= 10) {
-            System.out.println("Points Gained: " + points + ". Your team has survived the game.");
-        } else {
-            System.out.println("Points Gained: " + points + ". Your team is out.");
+        if (points>=10) {
+            System.out.println("Points Gained: "+points+ ". Your team has survived the game.");
+        } 
+        else {
+            System.out.println("Points Gained: "+points +". Your team is out.");
         }
     }
 

@@ -1,70 +1,46 @@
 //Assignment Task 01: Row Rotation Policy
 class AssgnTask1 {
-
-    // Complete this method so that it gives the Expected Output
-    // YOU ONLY HAVE TO SUBMIT THIS METHOD, NO OTHER DRIVER CODE
+    
     public static Integer rowRotation(Integer examWeek, String[][] matrix) {
 
-        // For this task you don't need to create new Matrix
-        // You can create 1D array if you need (but you can do it without creating any
-        // 1D array as well)
-        // After rotation the Matrix should be printed inside the method
-        // Only the integer row number is to be returned
-
-        // TO DO
-
-        int totalRows = matrix.length;
-        int totalCols = matrix[0].length;
-
+        int row_number = matrix.length;
+        int column_number=matrix[0].length;
         int shift = examWeek - 1;
 
-        // Make shift within limit
-        while (shift >= totalRows) {
-            shift = shift - totalRows;
+        while (shift>=row_number) {
+            shift = shift-row_number;
         }
-
-        // Rotate one time each
-        for (int s = 0; s < shift; s++) {
-
-            // store last row values manually
-            String[] lastRow = new String[totalCols];
-            for (int j = 0; j < totalCols; j++) {
-                lastRow[j] = matrix[totalRows - 1][j];
+        for (int s = 0; s <shift; s++) {
+            String[] lastRow = new String[column_number];
+            for (int j= 0;j<column_number; j++) {
+                lastRow[j]= matrix[row_number - 1][j];
             }
-
-            // move rows downward
-            for (int i = totalRows - 1; i > 0; i--) {
-                for (int j = 0; j < totalCols; j++) {
-                    matrix[i][j] = matrix[i - 1][j];
+            for (int i = row_number-1;i > 0; i--) {
+                for (int j = 0; j < column_number; j++) {
+                    matrix[i][j]=matrix[i - 1][j];
                 }
             }
-
-            // put last row at first
-            for (int j = 0; j < totalCols; j++) {
-                matrix[0][j] = lastRow[j];
+            for (int j = 0;j<column_number; j++) {
+                matrix[0][j]=lastRow[j];
             }
         }
-
-        // print matrix
-        for (int i = 0; i < totalRows; i++) {
-            for (int j = 0; j < totalCols; j++) {
+        for (int i = 0; i <row_number; i++) {
+            for (int j=0;j<column_number; j++) {
                 System.out.print(" | " + matrix[i][j] + "");
             }
             System.out.println(" | ");
         }
-
-        // find AA
-        for (int i = 0; i < totalRows; i++) {
-            for (int j = 0; j < totalCols; j++) {
+        for (int i =0; i<row_number;i++) {
+            for (int j = 0; j<column_number;j++) {
                 if (matrix[i][j].equals("AA")) {
-                    return i + 1;
+                    return i+1;
                 }
             }
         }
-
         return -1;
-
     }
+
+
 
     // DO NOT CHANGE ANY DRIVER CODE BELOW THIS LINE
     public static void main(String[] args) {

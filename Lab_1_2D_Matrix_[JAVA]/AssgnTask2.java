@@ -1,46 +1,28 @@
 //Assignment Task 02: Matrix Compression
 class AssgnTask2 {
 
-    // Complete this method so that it gives the Expected Output
-    // YOU ONLY HAVE TO SUBMIT THIS METHOD, NO OTHER DRIVER CODE
     public static Integer[][] compressMatrix(Integer[][] matrix) {
 
-        // For this task you'll need to create new 2D array
+        int length = matrix.length;
+        int matrix_size = length / 2;
+        int row = 0;
 
-        // TO DO
-
-        // remove the line below and return the newly created Compressed 2D matrix
-
-        int size = matrix.length;
-        int newSize = size / 2;
-
-        Integer[][] result = new Integer[newSize][newSize];
-
-        int r = 0;
-
-        for (int i = 0; i < size; i = i + 2) {
-
-            int c = 0;
-
-            for (int j = 0; j < size; j = j + 2) {
-
+        Integer[][] result = new Integer[matrix_size][matrix_size];
+        for (int i=0;i<length;i = i + 2) {
+            int column=0;
+            for (int j=0;j<length;j=j+2) {
                 int total = 0;
+                total =total + matrix[i][j];
+                total=total +matrix[i][j+1];
+                total= total +matrix[i+1][j];
+                total=total +matrix[i+1][j+1];
 
-                total = total + matrix[i][j];
-                total = total + matrix[i][j + 1];
-                total = total + matrix[i + 1][j];
-                total = total + matrix[i + 1][j + 1];
-
-                result[r][c] = total;
-
-                c++;
+                result[row][column] = total;
+                column++;
             }
-
-            r++;
+            row++;
         }
-
         return result;
-
     }
 
     // DO NOT CHANGE ANY DRIVER CODE BELOW THIS LINE
