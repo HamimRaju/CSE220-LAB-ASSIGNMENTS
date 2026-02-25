@@ -10,6 +10,7 @@ class AssgnTask1 {
         while (shift>=row_number) {
             shift = shift-row_number;
         }
+        
         for (int s = 0; s <shift; s++) {
             String[] lastRow = new String[column_number];
             for (int j= 0;j<column_number; j++) {
