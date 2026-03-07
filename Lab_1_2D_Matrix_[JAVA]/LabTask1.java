@@ -5,9 +5,7 @@ class LabTask1{
     //NO NEED TO SUBMIT LAB TASKS
     public static void walkZigzag( Integer[][] matrix ){
 
-        //For this task you don't need to create new arrays
-
-        //TO DO
+        //Please solve this task asap
 
     }
 
