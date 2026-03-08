@@ -19,6 +19,7 @@ public class AssignmentTask5 {
             }
         }
         Node tail = dh;
+        
         while (tail.next != dh) {
             tail = tail.next;
         }
