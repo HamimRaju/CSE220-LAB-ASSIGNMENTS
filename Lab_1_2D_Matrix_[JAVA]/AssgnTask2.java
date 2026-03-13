@@ -24,7 +24,6 @@ class AssgnTask2 {
         }
         return result;
     }
-
     // DO NOT CHANGE ANY DRIVER CODE BELOW THIS LINE
     public static void main(String[] args) {
         Integer[][] matrix = {
