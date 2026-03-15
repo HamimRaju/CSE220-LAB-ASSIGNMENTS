@@ -1,22 +1,24 @@
-// AssignmentTask1: Building Blocks
 public class AssignmentTask1 {
 
-    //Two heads are being passed onto this method
-    //and a String is expected as return
-    // After you're done coding  MUST SUBMIT this method
     public static String checkSimilar( Node building1, Node building2 ){
-        
-        //You're not suppose to create any new Linked List for this task
-        
-        //TODO
-
-        //Once you're ready to return the String delete the following line
-        return null;
+        Node temp1 = building1;
+        Node temp2 = building2;
+        while(temp1 != null && temp2 != null){
+            if(temp1.elem != temp2.elem){
+                return "Not Similar";
+            }
+            temp1 = temp1.next;
+            temp2 = temp2.next;
+        }
+        if(temp1 != null){
+            return "Not Similar";
+        }
+        if(temp2 != null){
+            return "Not Similar";
+        }
+        return "Similar";
     }
 
-    //NOTE: if you find any issue with the driver code please inform AIB
-    //DO NOT TOUCH THE DRIVER CODE BELOW
-    //DO NOT SUBMIT THE DRIVER CODE
     public static void main(String[] args){
         //DO NOT TOUCH THE DRIVER CODE BELOW
         System.out.println("==============Test Case 1=============");
