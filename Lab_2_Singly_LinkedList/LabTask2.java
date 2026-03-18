@@ -1,21 +1,31 @@
-// LabTask2: Word Decoder
 public class LabTask2 {
-    
-    // No need to submit this task
+
     public static Node wordDecoder( Node head ){
+        int count = 0;
+        Node temp = head;
+        while (temp != null) {
+            temp = temp.next;
+            count++;
+        }
+        int modulo = 13 % count;
         
-        //You're suppose to create a new Dummy headed Singly Linked List in this method
-        //Dummy head is basically a head Node where the elem is null
-        // Node dHead = new Node(null, null); here the dHead is a Dummy Head
-
-        //TO DO
-
-        //remove the following line when you're ready to return the new head
-        return null;
+        int index = 0;
+        Node prev = null;
+        Node current = head;
+        while(current != null){
+            if(index != 0 && index % modulo == 0){
+                Node newNode = new Node(current.elem); //Creating new Node with current value
+                newNode.next = prev;
+                prev = newNode;
+            }
+            index++;
+            current = current.next;
+        }
+        Node dummyHead = new Node(null);
+        dummyHead.next = prev;
+        return dummyHead;
     }
 
-    //NOTE: if you find any issue with the driver code please inform AIB
-    //DO NOT TOUCH THE DRIVER CODE BELOW
     public static void main(String[] args){
         System.out.println("==============Test Case 1=============");
         Node head = LinkedList.createList(new Character[]{'B', 'M', 'D', 'T', 'N', 'O', 'A', 'P', 'S', 'C'});

@@ -1,18 +1,18 @@
-// AssignmentTask2: Organize Books
 import java.util.Arrays;
 public class AssignmentTask2{
     
-    // MUST SUBMIT this method
     public static Node organizeBooks(Node head, Integer[] popularity) {
-        
-        //TO DO
-
-        return null; // Remove this when you're ready to return the new head
+        Node current = head;
+        Integer [] booksNumber = new Integer[5];
+        int lowest = booksNumber[0];
+        for(int i=0; i<booksNumber.length;i++){
+            if(booksNumber[i]>lowest){
+                
+            }
+        }
     }
 
-    //NOTE: if you find any issue with the driver code please inform AIB
-    //DO NOT MAKE ANY MODIFICATIONS IN THE TESTER CODE BELOW
-    //DO NOT SUBMIT THE DRIVER CODE BELOW
+
     public static void main(String[] args) {
         System.out.println("=================Test Case 1=================");
         Node books = LinkedList.createList(new String[]{"Dune", "IT", "Coraline", "Inferno", "Twlight"});

@@ -1,38 +1,8 @@
-// AssignmentTask4: ID Generator
-public class AssignmentTask4{
+public static Node idGenerator(Node head1, Node head2, Node head3) {
     
-    // MUST SUBMIT this method
-    public static Node idGenerator(Node head1, Node head2, Node head3) {
-        Node current = head1;
-        Node prev = null;
-        while (current!=null) {
-            Node front = current.next;
-            current.next = prev;
-            prev = current;
-            current = front;
-        }
-        Node dummy = new Node(-1);
-        Node curr = dummy;
-        Node temp2 = head2;
-        Node temp3 = head3;
-        while (temp2!= null && temp3!=null) {
-            Node newNode = new Node((temp2.elem + temp3.elem)%10);
-            current.next = newNode; 
-            curr = newNode;
-            temp2 = temp2.next;
-            temp3 = temp3.next;
-        }
-        Node current = prev;
-        while (current.next!=null) {
-            current = current.next;
-        }
-        current.next = dummy.next;
-        return prev;  
-    } 
+} 
 
-    //NOTE: if you find any issue with the driver code please inform AIB
-    //DO NOT MAKE ANY MODIFICATIONS IN THE TESTER CODE BELOW
-    //DO NOT SUBMIT THE DRIVER CODE BELOW
+
     public static void main(String[] args) {
         System.out.println("=========Test Case 1=============");
         Node head1 = LinkedList.createList(new Integer[]{0, 3, 2, 2});
