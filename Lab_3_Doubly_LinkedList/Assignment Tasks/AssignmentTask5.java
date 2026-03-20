@@ -1,35 +1,24 @@
 public class AssignmentTask5 {
 
     public static void sumOddAppend(Node dh) {
-
-        Node prev = dh;
         Node current = dh.next;
-        int sum = 0;
-
-        while (current!=dh) {
-            int val = (Integer) current.elem;
-            if (val % 2!= 0) {
-                sum+= val;
-                prev.next = current.next;
-                current = prev.next;
-            } 
-            else{
-                prev =current;
-                current =current.next;
+        int summation = 0;
+        while (current != dh) {
+            if((int)current.next.elem %2 == 1){
+                dh.next = current.next;
+                summation += (int)current.next.elem;
             }
+            current = current.next;
         }
-        Node tail = dh;
-        
-        while (tail.next != dh) {
-            tail = tail.next;
+        Node newNode = new Node(summation); 
+        Node temp = dh;
+        while (temp.next != null) {
+            temp.next = newNode;
         }
-        Node newNode = new Node(sum);
+        temp = temp.next;
         newNode.next = dh;
-        tail.next = newNode;
     }
 
-    // DO NOT SUBMIT THE DRIVER CODE BELOW
-    // SUBMITTING IT WILL INCREASE YOUR PLAG % FOR NO REASON
     public static void main(String[] args) {
         Object[] values = { 11, 22, 33, 44, 55, 66 };
         Node head = LinkedListHelpers.createDummyHeadedSinglyCircularLL(values, true);
