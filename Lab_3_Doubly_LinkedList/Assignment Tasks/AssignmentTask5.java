@@ -2,21 +2,23 @@ public class AssignmentTask5 {
 
     public static void sumOddAppend(Node dh) {
         Node current = dh.next;
-        int summation = 0;
+        int sum = 0;
+        Node store = dh;
+
         while (current != dh) {
-            if((int)current.next.elem %2 == 1){
-                dh.next = current.next;
-                summation += (int)current.next.elem;
+            if((int)current.elem %2 == 1){
+                sum += (int)current.elem;
+                current = current.next;
             }
-            current = current.next;
+            else{
+                store.next = current;
+                store = store.next;
+                current = current.next;
+            }
         }
-        Node newNode = new Node(summation); 
-        Node temp = dh;
-        while (temp.next != null) {
-            temp.next = newNode;
-        }
-        temp = temp.next;
-        newNode.next = dh;
+        Node summation = new Node(sum); 
+        store.next = summation;
+        summation.next = dh;
     }
 
     public static void main(String[] args) {
