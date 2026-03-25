@@ -19,8 +19,9 @@ public class AssignmentTask6 {
                 front1.prev = current2;
             }
             current1 =front1;
-            current2 =front2;
+            current2 =front2;        
         }
+        
         DNode tail = dh1;
         while (tail.next != null) {
             tail = tail.next;
