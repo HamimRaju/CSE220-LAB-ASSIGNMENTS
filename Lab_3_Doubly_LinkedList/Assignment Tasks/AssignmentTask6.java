@@ -2,22 +2,24 @@ public class AssignmentTask6 {
 
     public static void pairJoin(DNode dh1, DNode dh2) {
 
-        DNode pair1 =dh1.next;
-        DNode pair2= dh2.next;
+        DNode current1 =dh1.next;
+        DNode current2= dh2.next;
 
-        while (pair1!=null && pair2 != null) {
+        while (current1!=null && current2 != null) {
 
-            DNode next1 =pair1.next;
-            DNode next2 =pair2.next;
+            DNode front1 =current1.next;
+            DNode front2 =current2.next;
 
-            pair1.next=pair2;
-            pair2.prev= pair1;
-            pair2.next = next1;
-            if (next1 != null) {
-                next1.prev = pair2;
+            current1.next=current2;
+            current2.prev= current1;
+
+            current2.next = front1;
+            
+            if (front1 != null) {
+                front1.prev = current2;
             }
-            pair1 =next1;
-            pair2 =next2;
+            current1 =front1;
+            current2 =front2;
         }
         DNode tail = dh1;
         while (tail.next != null) {
