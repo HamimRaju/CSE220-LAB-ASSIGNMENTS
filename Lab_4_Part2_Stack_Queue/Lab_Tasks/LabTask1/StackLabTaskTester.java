@@ -1,10 +1,29 @@
 package LabTask1;
+
+import java.util.Stack;
+
 public class StackLabTaskTester {
     
     // You have to write this method
     // NO NEED TO SUBMIT LAB TASK
     public static void removeBlock(Stack stack, int n) {
-        // To Do
+        Stack <Integer> s1 = new Stack<>();
+        int count = 1;
+
+        while (!stack.isEmpty()) {
+            if(count == n){
+                stack.pop();
+                break;
+            }
+            else{
+                s1.push(stack.pop());
+                count++;
+            }
+        }
+        //Now from the stored one add to the main one.
+        while (!s1.isEmpty()) {
+            stack.push(s1.pop());
+        }
     }
 
     //DO NOT CHANGE THIS METHOD
