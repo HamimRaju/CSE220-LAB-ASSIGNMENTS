@@ -1,13 +1,9 @@
-package LabTask1;
-
-import java.util.Stack;
+package labTask1;
 
 public class StackLabTaskTester {
     
-    // You have to write this method
-    // NO NEED TO SUBMIT LAB TASK
     public static void removeBlock(Stack stack, int n) {
-        Stack <Integer> s1 = new Stack<>();
+        Stack s1 = new Stack();
         int count = 1;
 
         while (!stack.isEmpty()) {
@@ -30,8 +26,7 @@ public class StackLabTaskTester {
     // This method is for printing the element of the stack. No need to modify anything.
     public static void printStack(Stack stack) {
         if (stack==null || stack.isEmpty()) {
-            //System.out.println("null");
-            return; //remove this line once your're done
+            System.out.println("null");
         }
         int elem = stack.pop();
         System.out.printf("| %2d |\n",elem);
@@ -43,7 +38,8 @@ public class StackLabTaskTester {
     public static void assertTest(int actual, int expected) {
         if (actual == expected) {
             System.out.println("Test Passed!");
-        } else {
+        } 
+        else {
             System.out.println("Test Failed! Expected: " + expected + ", but got: " + actual);
         }
     }
@@ -62,7 +58,7 @@ public class StackLabTaskTester {
 
         printStack(s);
         System.out.println("------\nCalling pop()\n");
-	s.pop();
+	    s.pop();
         printStack(s);
         System.out.println("------");
         System.out.println("--- Checking Ended ---\n");
