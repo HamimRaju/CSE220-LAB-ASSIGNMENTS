@@ -3,6 +3,7 @@
  hashFunction() and searchHashtable()
  the rest of the metods are already written
  DO NOT TOUCH any other methods or codes*/
+ 
 public class HashTable {
 
     //ht[] :: is the HashTable array that stores the PairNode objects
