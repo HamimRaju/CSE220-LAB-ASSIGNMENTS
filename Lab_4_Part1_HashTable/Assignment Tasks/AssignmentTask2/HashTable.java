@@ -1,8 +1,7 @@
 /*You will have to complete the PairNode Contrustor first
  then within this class you only have to complete two methods
  hashFunction() and searchHashtable()
- the rest of the metods are already written
- DO NOT TOUCH any other methods or codes*/
+ the rest of the metods are already written DO NOT TOUCH any other methods or codes*/
  
 public class HashTable {
 
