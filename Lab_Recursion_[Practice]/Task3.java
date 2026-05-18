@@ -15,7 +15,7 @@ public class Task3 {
     public static void task3B_recursive(Node head) {
         Node current = head;
         if(current == null){
-            return;
+            System.out.print("null");
         }
         else{
             System.out.print(current.elem+" -> ");
@@ -25,31 +25,63 @@ public class Task3 {
 
     // Task 3C: Return sum of all elements using loop
     public static int task3C(Node head) {
-        // TODO: Implement this using a loop
+        int sum = 0;
         Node current = head;
         while (current != null) {
+            sum+=current.elem;
             current = current.next;
-            return current.elem;
         }
+        return sum;
     }
 
     // Task 3D: Return sum of all elements using recursion
     public static int task3D_recursive(Node head) {
-        // TODO: Implement this recursively
-        return 0;
+        Node current = head;
+        if(current == null){
+            return 0;
+        }
+        else{
+            return current.elem + task3D_recursive(current.next);
+        }
     }
 
     // Task 3E: Return (sum of odd) - (product of even) using loop
     public static int task3E(Node head) {
-        // TODO: Implement this using a loop
-        return 0;
+        Node current = head;
+        int sum = 0;
+        int product = 1;
+
+        while (current != null) {
+            if(current.elem %2 !=0){
+                sum += current.elem;
+            }
+            else{
+                product *= (current.elem);
+            }
+            current = current.next;
+        }
+        return sum - product;
     }
 
     // Task 3F: Return (sum of odd) - (product of even) using recursion
     public static int task3F_recursive(Node head) {
-        // TODO: Implement this recursively
-        return 0;
+
+        int result = findSubtraction(head,0,1);
+        return result;  
     }
+    static int findSubtraction(Node head, int summation, int product){
+        if(head == null){
+            return summation - product;
+        }
+        if(head.elem %2 != 0){
+            return findSubtraction(head.next, summation += head.elem, product);
+        }
+        return findSubtraction(head.next, summation, product *= head.elem);
+    }
+
+
+
+
 
     public static void main(String[] args) {
         // Driver code for testing Task 3 methods
