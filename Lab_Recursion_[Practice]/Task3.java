@@ -2,20 +2,35 @@ import java.util.Random;
 
 public class Task3 {
 
-    // Task 3A: Print elements of a linked list using loop
     public static void task3A(Node head) {
-        // TODO: Implement this using a loop
+
+        Node current = head;
+        while (current != null) {
+            System.out.print(current.elem+" -> ");
+            current = current.next;
+        }
+        System.out.print("null");
     }
 
-    // Task 3B: Print elements of a linked list using recursion
     public static void task3B_recursive(Node head) {
-        // TODO: Implement this recursively
+        Node current = head;
+        if(current == null){
+            return;
+        }
+        else{
+            System.out.print(current.elem+" -> ");
+            task3B_recursive(current.next);
+        }
     }
 
     // Task 3C: Return sum of all elements using loop
     public static int task3C(Node head) {
         // TODO: Implement this using a loop
-        return 0;
+        Node current = head;
+        while (current != null) {
+            current = current.next;
+            return current.elem;
+        }
     }
 
     // Task 3D: Return sum of all elements using recursion
